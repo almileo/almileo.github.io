@@ -10,3 +10,15 @@
 html{
     scroll-behavior: smooth;
 }
+
+.icono:hover{
+    color: transparent; 
+}
+
+.git{
+    color: black;
+}
+
+.linkedin{
+    color: #0077b5;
+}
