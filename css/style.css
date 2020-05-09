@@ -22,3 +22,8 @@ html{
 .linkedin{
     color: #0077b5;
 }
+
+.contacto{
+    display: flex;
+    justify-content: center;
+}
