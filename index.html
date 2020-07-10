@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Leonardo Almiron">
     <meta name="description" content="Mi cv de desarrollador web">
-    <meta name="kewwords" content="">
+    <meta name="kewwords" content="curriculum, cv, job, trabajo, primer empleo">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/1212d66061.js" crossorigin="anonymous"></script>
     <title>CV Almiron Leonardo</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_2MbRn1fiDFZIFqebfVE5q");
+        })();
+    </script>
 </head>
 
 <body>
@@ -63,7 +69,7 @@
             <p><strong>Edad:</strong> 29 años</p>
             <p><strong>Email:</strong> almiron.leonardo@gmail.com</p>
             <p><strong>Telefono:</strong> +54 9 11 40970366</p>
-            <p><strong>Direccion:</strong> Santiago del Estero 955 2A, San Miguel de Tucumán, Tucumán, Argentina</p>
+            <p><strong>Direccion:</strong> Bolivar 551, San Miguel de Tucumán, Tucumán, Argentina</p>
             <hr>
             <h3 class="text-primary">Cover Letter</h3>
             <p>La tecnologia siempre fue mi pasión y es esa la razón por la que me estoy dedicando a aprender sobre el
@@ -279,26 +285,30 @@
         <h2 class="display-4 text-center my-4" id="contacto">Contacto</h2>
         <article class="mb-3 row contacto">
             <div class="col-sm-12 col-md-6">
-                <form>
+                <form id="formulario" onsubmit="validarGeneral(event)">
                     <div class="form-group">
-                      <label>Nombre y Apellido</label>
-                      <input type="text" class="form-control" placeholder="Su nombre y apellido" required>
+                        <label>Nombre y Apellido</label>
+                        <input type="text" class="form-control" placeholder="Su nombre y apellido" required id="nombre">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Su email ejemplo@gmail.com" required>
-                      </div>
+                        <input type="email" class="form-control" placeholder="Su email ejemplo@gmail.com" required
+                            id="email" onblur="validarMail(this)">
+                    </div>
                     <div class="form-group">
-                      <label>Deje su mensaje</label>
-                      <textarea class="form-control" rows="3" placeholder="Ingrese aqui su mensaje"></textarea>
+                        <label>Deje su mensaje</label>
+                        <textarea class="form-control" rows="3" placeholder="Ingrese aqui su mensaje"
+                            id="msj"></textarea>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary text-center">Enviar</button>
+                        <button type="submit" class="btn btn-primary text-center" id="enviar">Enviar</button>
+                    </div>
+                    <div class="alert alert-success my-3 d-none" role="alert" id="mensajeEnvio">
                     </div>
                 </form>
         </article>
     </section>
-    
+
 
     <footer class="bg-dark text-light py-2">
         <div class="container text-center">
@@ -389,6 +399,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
+    <script src="cv.js"></script>
 </body>
 
 </html>
